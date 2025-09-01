@@ -34,6 +34,12 @@
      --body-font: "Work Sans", sans-serif;
 }
 
+/* Sinhala font */
+@font-face {
+     font-family: "ApexAPura39";
+     src: url(/assets/font/apex039.ttf) format("truetype");
+}
+
 /*--- GLOBAL STYLES ---*/
 * {
      box-sizing: border-box;
@@ -140,6 +146,8 @@ html {
      font-size: 48px;
 
      box-shadow: 1px 2px gray;
+
+     font-family: ApexAPura39;
 }
 
 .diacrit.tile {
