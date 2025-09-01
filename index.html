@@ -12,8 +12,10 @@
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>    
 
-     <script src="/assets/js/drag-drop-script.js" defer></script>
+     <script src="/assets/js/setup-tiles-placeholders.js" defer></script>
+      <script src="/assets/js/drag-drop-script.js" defer></script>
      <script src="/assets/js/screen-transitions.js" defer></script>
+     
      <script src="/assets/js/audio.js" defer></script>
 </head>
 <body>
@@ -38,9 +40,9 @@
                               <div class="diacrit placeholder bottom"></div>
                               <div class="diacrit placeholder left"></div>
                          </div>
-                         <div class="tokens tray">
-                              <div class="tile letter">A</div>
-                              <div class="tile diacrit">B</div>
+                         <div id="sound1-tray" class="tokens tray">
+                              <!-- <div class="tile letter">A</div>
+                              <div class="tile diacrit">B</div> -->
                          </div>
                     </div>
                     <div>

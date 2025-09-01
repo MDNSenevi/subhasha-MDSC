@@ -4,20 +4,19 @@ gsap.registerPlugin(Flip);
 const checkButton1 = document.querySelector("#check-1-btn");
 const checkButton2 = document.querySelector("#check-2-btn");
 let current = document.querySelector(".sound-section.active");
-console.log(current);
+
 
 let isAnimating = false;
 
 checkButton1.addEventListener("click", e => {
      e.preventDefault();
-     show(checkButton1.dataset.goto);
+     // show(checkButton1.dataset.goto);
 });
 
 checkButton2.addEventListener("click", e => {
      e.preventDefault();
      show(checkButton2.dataset.goto);
 });
-
 
 // Trasition logic - as per ChatGPT
 function show(elementID) {
@@ -56,4 +55,3 @@ function show(elementID) {
      timeline1.to(current, {xPercent: -20, opacity: 0}, 0)
        .to(next, {xPercent: 0, opacity: 1}, 0);
 }
-
