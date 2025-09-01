@@ -1,5 +1,6 @@
 gsap.registerPlugin(Flip);
 
+// Move this to the general logic page
 const checkButton1 = document.querySelector("#check-1-btn");
 const checkButton2 = document.querySelector("#check-2-btn");
 let current = document.querySelector(".sound-section.active");

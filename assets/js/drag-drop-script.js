@@ -2,20 +2,10 @@ gsap.registerPlugin(Draggable);
 
 const targetAreaLetter = document.querySelectorAll(".letter.placeholder");
 const targetAreaDiacrit = document.querySelectorAll(".diacrit.placeholder");
-// var targetBounds = targetAreaLetter.getBoundingClientRect();
-
-// var targetPoints1 = [];
-
-// targetPoints1.push({x:targetBounds.left, y:targetBounds.top});
-// targetPoints1.push({x:targetBounds.right, y:targetBounds.top});
-// targetPoints1.push({x:targetBounds.left, y:targetBounds.bottom});
-// targetPoints1.push({x:targetBounds.right, y:targetBounds.bottom});
 
 var draggingTile, draggingTileBounds, targetSnapPoints1;
 
-// console.log(targetPoints1);
-
-
+// Draggable logic to highlight the drop targets
 Draggable.create(".tile", {
      type: "x,y",
      onPress: function() {
@@ -30,11 +20,6 @@ Draggable.create(".tile", {
                     placeholder.classList.add("highlight");
                });
           }
-           
-          
-          
-
-
      },
      onDrag: function() {
           // check if this is a diacrit or letter
