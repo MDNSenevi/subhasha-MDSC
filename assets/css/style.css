@@ -145,3 +145,17 @@ html {
 .diacrit.tile {
      color: plum;
 }
+
+/*--- PAGE TRANSITION ---*/
+
+.sound-section {
+     position:absolute;
+     inset: 0;
+     opacity: 0;
+     pointer-events: none;
+}
+
+.active {
+     opacity: 1;
+     pointer-events: all;
+}
