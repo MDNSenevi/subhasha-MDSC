@@ -47,7 +47,7 @@ dropTargets[3] = new TilePlaceholder('letter', 'bottom', diacritB);
 dropTargets[4] = new TilePlaceholder('letter', 'left', diacritL);
 
 //  create the tiles for screen 1
-sound1TileSet[0] = new Tile('letter', 'r', letterP);
+sound1TileSet[0] = new Tile('letter', 'l', letterP);
 sound1TileSet[1] = new Tile('diacrit', 'q', diacritB);
 sound1TileSet[2] = new Tile('diacrit', 'd', diacritR);
 sound1TileSet[3] = new Tile('letter', 'o', letterP);
@@ -70,4 +70,12 @@ for (let i = 0; i < sound1TileSet.length; i++) {
      tile.innerHTML = sound1TileSet[i].character;
      
      sound1TT.appendChild(tile);
+}
+
+
+// Update the data-set in the placeholder
+for(let i = 0; i < dropTargets.length; i++) {
+     // console.log(i);
+     // console.log(dropTargets[i].dropTarget.dataset.dropIndex);
+     dropTargets[i].dropTarget.dataset.dropIndex = i;
 }

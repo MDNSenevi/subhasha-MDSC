@@ -8,16 +8,6 @@ let current = document.querySelector(".sound-section.active");
 
 let isAnimating = false;
 
-checkButton1.addEventListener("click", e => {
-     e.preventDefault();
-     // show(checkButton1.dataset.goto);
-});
-
-checkButton2.addEventListener("click", e => {
-     e.preventDefault();
-     show(checkButton2.dataset.goto);
-});
-
 // Trasition logic - as per ChatGPT
 function show(elementID) {
      if (isAnimating) return;

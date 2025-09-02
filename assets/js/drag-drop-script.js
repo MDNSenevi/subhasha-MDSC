@@ -20,5 +20,10 @@ Draggable.create(".tile", {
           // remove highlight on appropriate placeholder
           var dropTA = sound1TileSet[this.target.dataset.tileIndex].matchingDropTarget;
           dropTA.classList.remove("highlight");
+
+          // console.log(dropTA.dataset.dropIndex);
+          dropTargets[dropTA.dataset.dropIndex].placedTile = sound1TileSet[this.target.dataset.tileIndex];
+
+          // console.log(sound1TileSet[this.target.dataset.tileIndex]);
      }
 });
