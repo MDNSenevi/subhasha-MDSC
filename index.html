@@ -5,15 +5,24 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Subhāshā - MDS Capstone</title>
 
-     <link rel="stylesheet" href="/assets/css/style.css">
-
+     
      <!-- GSAP -->
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>    
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>    
+     
+     <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100..900&display=swap" rel="stylesheet">
 
+     <!-- Adobe Fonts -->
+      <link rel="stylesheet" href="https://use.typekit.net/lqb8lwv.css">
+
+     <!-- My code links -->
+     <link rel="stylesheet" href="/assets/css/style.css">
      <script src="/assets/js/setup-tiles-placeholders.js" defer></script>
-      <script src="/assets/js/drag-drop-script.js" defer></script>
+     <script src="/assets/js/drag-drop-script.js" defer></script>
      <script src="/assets/js/screen-transitions.js" defer></script>
      <script src="/assets/js/check-correct.js" defer></script>
      
@@ -28,9 +37,23 @@
           </header>
      <main>
           <section id="sound-1-section" class="sound-section active">
-               <div class="sound">
-                    <button id="sound1Btn" class="sound btn">Play sound</button>
-                    <audio id="sound-1" src="assets/audio/subhasha-sound-1.mp3" preload="auto"></audio>
+               <div class="sound-ui">
+                    <a href="#" class="home">
+                         <img src="/assets/images/icons/ic_fluent_home_24_filled.svg" alt="" srcset="">
+                    </a>
+                    <div class="instructions">
+                         <p class="sin">ඔයාට ඇසෙන ශබ්‍දය සාදන්‍න.</p>
+                         <p class="eng">Match the sound using the letter tiles.</p>
+                         <div class="button"> 
+                              <button id="sound1Btn" class="sound btn">Play sound</button>
+                              <audio id="sound-1" src="assets/audio/subhasha-sound-1.mp3" preload="auto"></audio>
+                         </div>
+                    </div>
+                    <div class="card-tray">
+                         <div class="card"></div>
+                         <div class="card"></div>
+                         <div class="card"></div>
+                    </div>
                </div>
                <div class="gameboard">
                     <div class="playarea">
@@ -46,8 +69,8 @@
                               <div class="tile diacrit">B</div> -->
                          </div>
                     </div>
-                    <div>
-                         <button id="check-1-btn" data-goto="sound-2-section">Check 1 -></button>
+                    <div class="check-button">
+                         <button id="check-1-btn" data-goto="sound-2-section">Check</button>
                     </div>
                </div>
           </section>
