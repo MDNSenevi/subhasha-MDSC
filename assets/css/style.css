@@ -1,4 +1,11 @@
 /*--- VARIABLES USED IN SUBHĀSHĀ ---*/
+
+/* Sinhala font */
+@font-face {
+     font-family: "ApexAPura39";
+     src: url(/assets/font/apex039.ttf) format("truetype");
+}
+
 :root {
      /* COLOURS */
      --black: #0c0c0c;
@@ -30,15 +37,11 @@
      --tSmall: 0.7368rem;
 
      /* TYPOGRAPHY */
-     --header-font: "Alegreya", serif;
-     --body-font: "Work Sans", sans-serif;
+     --sin-font: "Noto Sans Sinhala", sans-serif;
+     --eng-font: "proxima-soft", sans-serif;
 }
 
-/* Sinhala font */
-@font-face {
-     font-family: "ApexAPura39";
-     src: url(/assets/font/apex039.ttf) format("truetype");
-}
+
 
 /*--- GLOBAL STYLES ---*/
 * {
@@ -51,6 +54,20 @@ html {
 
 p {
      margin: 0;
+}
+
+main {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 150px 1fr 1fr 150px;
+     grid-template-areas: 
+     "instr instr card"
+     "play play card"
+     "play play card"
+     "tray tray stack";
+     
+     width: fit-content;
+     height: fit-content;
 }
 
 /*--- GAME UI ---*/
@@ -69,12 +86,12 @@ p {
 }
 
 .sin {
-     font-family: "Noto Sans Sinhala", sans-serif;
+     font-family: var(--sin-font);
      font-weight: 700;
 }
 
 .eng {
-     font-family: "proxima-soft", sans-serif;
+     font-family:var(--eng-font);
      font-weight: 700;
 }
 
@@ -82,6 +99,8 @@ p {
      display: flex;
      flex-direction: column;
      align-items: center;
+     grid-area: instr;
+     background-color: red;
 }
 .instructions p {
      font-size: var(--h4);
@@ -103,10 +122,15 @@ button {
 }
 
 /*--- PLAY AREA STYLING ---*/
+.gameboard {
+     grid-area: play;
+     background-color: lightcoral;
+}
+
 .playarea {
      width: 100%;
      height: 100%;
-     /* background-color: lightcoral; */
+     
      padding: 15px;
 
      /* Center the play area for the display */
@@ -114,6 +138,8 @@ button {
      flex-direction: column;
      justify-content: center;
      align-items: center;
+
+     /* grid-area: play; */
 }
 
 /*--- DROP TARGET STYLING ---*/
@@ -170,6 +196,8 @@ button {
 
      padding: var(--small);
 
+     grid-area: tray;
+
 }
 
 .letter.highlight {
@@ -205,6 +233,21 @@ button {
 
 .diacrit.tile {
      color: plum;
+}
+
+.cards {
+     grid-area: card;
+     background-color: aqua;
+}
+
+.card {
+     width: 125px;
+     height: 200px;
+}
+
+.card-stack {
+     grid-area: stack;
+     background-color: #cb398d;
 }
 
 /*--- PAGE TRANSITION ---*/
