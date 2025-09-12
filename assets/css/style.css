@@ -55,3 +55,44 @@ html {
 p {
      margin: 0;
 }
+
+a {
+     font-family: inherit;
+     color: inherit;
+     text-decoration: none;
+}
+
+main {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 48px;
+
+     width: 100vw;
+     height: 100vh;
+}
+
+.sin {
+     font-family: var(--sin-font);
+}
+
+.eng {
+     font-family:var(--eng-font);
+     font-weight: 500;
+}
+
+/*--- NAVIGATION ---*/
+
+.nav-button {
+     display: inline-block;
+     width: fit-content;
+     height: fit-content;
+}
+
+.large.nav-button .label {
+     font-size: var(--h3);
+}
+
+.label .eng {
+     color: gray;
+}

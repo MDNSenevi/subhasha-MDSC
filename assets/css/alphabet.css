@@ -29,12 +29,10 @@ main {
 }
 
 .sin {
-     font-family: var(--sin-font);
      font-weight: 700;
 }
 
 .eng {
-     font-family:var(--eng-font);
      font-weight: 700;
 }
 
