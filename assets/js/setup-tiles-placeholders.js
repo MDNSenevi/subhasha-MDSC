@@ -2,11 +2,20 @@
 // OBJECT CODE
 
 class Tile {
-     constructor(type, character, matchingDropTarget, currentPosition = null) {
+     constructor(type, character, matchingDropTarget, currentPosition = null, htmlElem = null) {
           this.type = type;
           this.character = character;
           this.matchingDropTarget = matchingDropTarget;
           this.currentPosition = currentPosition;
+          this.htmlElem = htmlElem;
+     }
+
+     removeAnim() {
+          // Add animation to remove tile from gameboard here
+     }
+
+     addAnim() {
+          // Add animation to add to tray
      }
 }
 
@@ -68,6 +77,8 @@ for (let i = 0; i < sound1TileSet.length; i++) {
      tile.classList.add(`${sound1TileSet[i].type}`);
      tile.dataset.tileIndex = i;
      tile.innerHTML = sound1TileSet[i].character;
+
+     sound1TileSet[i].htmlElem = tile;
      
      sound1TT.appendChild(tile);
 }
