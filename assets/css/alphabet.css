@@ -187,7 +187,7 @@ button {
 
 .cards {
      grid-area: card;
-     background-color: aqua;
+     /* background-color: aqua; */
 }
 
 .card {
