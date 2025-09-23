@@ -104,7 +104,7 @@ button {
 .placeholder {
      width: 150px;
      height: 150px;
-     border: var(--x-small) dotted #cecece;
+     border: var(--x-small) dotted var(--black-40);
 
      margin: var(--small);
      justify-self: center;
@@ -116,7 +116,7 @@ button {
 }
 
 .diacrit.placeholder {
-     border: 4px dotted plum;
+     border: 4px dotted var(--purple-40);
 }
 
 .placeholder.top {
@@ -142,7 +142,7 @@ button {
      align-items: center;
      width: 80vw;
 
-     background-color: rgba(211, 211, 211, 0.309);
+     background-color: var(--black-20);
 
      padding: var(--small);
 
@@ -151,11 +151,11 @@ button {
 }
 
 .letter.highlight {
-     background-color: rgba(211, 211, 211, 0.5);
+     background-color: var(--black-10);
 }
 
 .diacrit.highlight {
-     background-color: rgba(221, 160, 221, 0.5);
+     background-color: var(--purple-10);
 }
 
 .tile {
@@ -164,8 +164,9 @@ button {
      width: 128px;
      height: 128px;
      
-     border: 1px solid lightgray;
-     background-color: white;
+     border: 1px solid var(--black-20);
+     background-color: var(--white);
+     border-radius: var(--x-small);
      
      display: flex;
      justify-content: center;
@@ -176,13 +177,13 @@ button {
 
      font-size: 48px;
 
-     box-shadow: 1px 2px gray;
+     box-shadow: 1px 2px var(--black-40);
 
-     font-family: ApexAPura39;
+     font-family: var(--sin-tile-font);
 }
 
 .diacrit.tile {
-     color: plum;
+     color: var(--purple);
 }
 
 .cards {
