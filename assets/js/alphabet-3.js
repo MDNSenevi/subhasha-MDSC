@@ -57,7 +57,46 @@ const sound = document.querySelector("#sound");
 
 /*--- PAGE FUNCTIONS ---*/
 
-// From ChatGPT
+//From ChatGPT to test animation
+function dropTileAnim(draggedTile, dropTarget) {
+    if (draggedTile.hitTest(dropTarget, 50)) {
+         const parent = draggedTile.target.offsetParent || document.body;
+
+        // rects in viewport coords
+        const pRect = parent.getBoundingClientRect();
+        const tRect = dropTarget.getBoundingClientRect();
+        const mRect = draggedTile.target.getBoundingClientRect();
+
+        // target centre relative to parent
+        const targetCX = (tRect.left - pRect.left) + tRect.width / 2;
+        const targetCY = (tRect.top  - pRect.top)  + tRect.height / 2;
+
+        // tile centre relative to parent
+        const tileCX = (mRect.left - pRect.left) + mRect.width / 2;
+        const tileCY = (mRect.top  - pRect.top)  + mRect.height / 2;
+
+        // how much to translate so centres line up
+        const dx = targetCX - tileCX;
+        const dy = targetCY - tileCY;
+
+        // animate *by* this delta (relative movement)
+        gsap.to(draggedTile.target, {
+        x: "+=" + dx,
+        y: "+=" + dy,
+        duration: 0.25,
+        ease: "power2.out"
+        });
+    } else {
+        gsap.to( draggedTile.target, {
+            x: 0,
+            y: 0,
+            duration: 0.25,
+            ease: "power2.out"
+        });
+    }
+}
+
+// Modified from ChatGPT to initiate draggable items
 function initDraggables() {
     // Kill old tiles if they exist
     draggableTiles.forEach(t => t.kill());
@@ -83,6 +122,10 @@ function initDraggables() {
             // remove highlight on appropriate placeholder
             var dropTA = soundTileSet[this.target.dataset.tileIndex].matchingDropTarget;
             dropTA.classList.remove("highlight");
+
+            // Animate the tile if placed int the wrong place
+            console.log(dropTA);
+            dropTileAnim(this, dropTA);
 
             // console.log(dropTA.dataset.dropIndex);
             dropTargets[dropTA.dataset.dropIndex].placedTile = soundTileSet[this.target.dataset.tileIndex];
@@ -110,8 +153,8 @@ function initPage() {
     soundTileSet[5] = new Tile('letter', 'u', letterP);
 
     // setup the accepted tiles for relevant placeholder
-    dropTargets[0].acceptedTile = soundTileSet[0];
-    dropTargets[4].acceptedTile = soundTileSet[5];
+    dropTargets[0].acceptedTile = soundTileSet[5];
+    dropTargets[2].acceptedTile = soundTileSet[2];
 
     // Create the HTML tiles and append to DOM
     for (let i = 0; i < soundTileSet.length; i++) {
@@ -119,12 +162,14 @@ function initPage() {
         tile = document.createElement("div");
         tile.classList.add(`tile`);
         tile.classList.add(`${soundTileSet[i].type}`);
-        tile.dataset.tileIndex = i;
+        tile.dataset.tileIndex = i; // Keep track of current tiles' index
         tile.innerHTML = soundTileSet[i].character;
 
         soundTileSet[i].htmlElem = tile;
         
         soundTT.appendChild(tile);
+
+        console.log(`index: ${i}, tileLeft: ${tile.offsetLeft}, tileTop: ${tile.offsetTop}`);
     }
 
     // Update the data-set in the placeholder to help with highlighting during dragging
@@ -145,7 +190,7 @@ function initPage() {
             alert("Got it right!");
             // resetGameboard(2);
 
-            window.location.assign("/alphabet-3.html");
+            // window.location.assign("/alphabet-3.html");
 
         } else {
             alert("Try again!");
