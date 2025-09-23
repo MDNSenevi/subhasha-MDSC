@@ -9,8 +9,8 @@ main {
      "play play card"
      "tray tray stack";
      
-     width: fit-content;
-     height: fit-content;
+     /* width: fit-content;
+     height: fit-content; */
 }
 
 /*--- GAME UI ---*/
