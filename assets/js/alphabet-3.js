@@ -186,7 +186,7 @@ function initPage() {
 
     checkButton.addEventListener("click", e => {
         e.preventDefault();
-        if (dropTargets[0].checkCorrect() && dropTargets[4].checkCorrect()) {
+        if (dropTargets[0].checkCorrect() && dropTargets[2].checkCorrect()) {
             alert("Got it right!");
             // resetGameboard(2);
 
