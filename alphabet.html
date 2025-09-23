@@ -23,12 +23,13 @@
      <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/alphabet.css">
      
-     <script src="/assets/js/setup-tiles-placeholders.js" defer></script>
+     <script src="/assets/js/alphabet.js" defer></script>
+     <!-- <script src="/assets/js/setup-tiles-placeholders.js" defer></script>
      <script src="/assets/js/drag-drop-script.js" defer></script>
      <script src="/assets/js/screen-transitions.js" defer></script>
      <script src="/assets/js/check-correct.js" defer></script>
      
-     <script src="/assets/js/audio.js" defer></script>
+     <script src="/assets/js/audio.js" defer></script> -->
 </head>
 <body>
      <header>
@@ -42,8 +43,8 @@
                <p class="sin">ඔයාට ඇසෙන ශබ්‍දය සාදන්‍න.</p>
                <p class="eng">Match the sound using the letter tiles.</p>
                <div class="button"> 
-                    <button id="sound1Btn" class="sound btn">Play sound</button>
-                    <audio id="sound-1" src="assets/audio/subhasha-sound-1.mp3" preload="auto"></audio>
+                    <button id="soundBtn" class="sound btn">Play sound</button>
+                    <audio id="sound" src="assets/audio/subhasha-sound-1.mp3" preload="auto"></audio>
                </div>
           </div>
           <div class="gameboard">
@@ -55,8 +56,8 @@
                     <div class="diacrit placeholder left"></div>
                </div>
           </div>
-          <button id="check1btn" class="check primary btn">Check</button>
-          <div id="sound1-tray" class="tokens tray">
+          <button id="checkBtn" class="check primary btn">Check</button>
+          <div id="sound-tray" class="tokens tray">
           </div>
           <div class="cards">
                <div class="card"></div>
