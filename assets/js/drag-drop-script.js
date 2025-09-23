@@ -6,7 +6,7 @@ Draggable.create(".tile", {
      onPress: function() {
           // check if this is a diacrit or letter &
           // highlight appropriate placeholder section
-          var dropTA = sound1TileSet[this.target.dataset.tileIndex].matchingDropTarget;
+          var dropTA = soundTileSet[this.target.dataset.tileIndex].matchingDropTarget;
           dropTA.classList.add("highlight");
      },
      onDrag: function() {
@@ -18,11 +18,11 @@ Draggable.create(".tile", {
           // snap into the placeholder if close (later)
 
           // remove highlight on appropriate placeholder
-          var dropTA = sound1TileSet[this.target.dataset.tileIndex].matchingDropTarget;
+          var dropTA = soundTileSet[this.target.dataset.tileIndex].matchingDropTarget;
           dropTA.classList.remove("highlight");
 
           // console.log(dropTA.dataset.dropIndex);
-          dropTargets[dropTA.dataset.dropIndex].placedTile = sound1TileSet[this.target.dataset.tileIndex];
+          dropTargets[dropTA.dataset.dropIndex].placedTile = soundTileSet[this.target.dataset.tileIndex];
 
           // console.log(sound1TileSet[this.target.dataset.tileIndex]);
      }

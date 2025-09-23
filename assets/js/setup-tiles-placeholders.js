@@ -37,7 +37,7 @@ class TilePlaceholder {
 
 // SETTING UP THE TILES
 
-var sound1TileSet = [], tile, dropTargets = [];
+var soundTileSet = [], tile, dropTargets = [];
 
 // Collect relevant HTML objects
 
@@ -56,29 +56,29 @@ dropTargets[3] = new TilePlaceholder('letter', 'bottom', diacritB);
 dropTargets[4] = new TilePlaceholder('letter', 'left', diacritL);
 
 //  create the tiles for screen 1
-sound1TileSet[0] = new Tile('letter', 'l', letterP);
-sound1TileSet[1] = new Tile('diacrit', 'q', diacritB);
-sound1TileSet[2] = new Tile('diacrit', 'd', diacritR);
-sound1TileSet[3] = new Tile('letter', 'o', letterP);
-sound1TileSet[4] = new Tile('diacrit', 'a', diacritT);
-sound1TileSet[5] = new Tile('diacrit', 'f', diacritL);
+soundTileSet[0] = new Tile('letter', 'l', letterP);
+soundTileSet[1] = new Tile('diacrit', 'q', diacritB);
+soundTileSet[2] = new Tile('diacrit', 'd', diacritR);
+soundTileSet[3] = new Tile('letter', 'o', letterP);
+soundTileSet[4] = new Tile('diacrit', 'a', diacritT);
+soundTileSet[5] = new Tile('diacrit', 'f', diacritL);
 
 // setup the accepted tiles for relevant placeholder
-dropTargets[0].acceptedTile = sound1TileSet[0];
-dropTargets[4].acceptedTile = sound1TileSet[5];
-dropTargets[2].acceptedTile = sound1TileSet[2];
+dropTargets[0].acceptedTile = soundTileSet[0];
+dropTargets[4].acceptedTile = soundTileSet[5];
+dropTargets[2].acceptedTile = soundTileSet[2];
 
 
 // Adding the tiles to the tray
-for (let i = 0; i < sound1TileSet.length; i++) {
+for (let i = 0; i < soundTileSet.length; i++) {
      // assign html element to a tile class
      tile = document.createElement("div");
      tile.classList.add(`tile`);
-     tile.classList.add(`${sound1TileSet[i].type}`);
+     tile.classList.add(`${soundTileSet[i].type}`);
      tile.dataset.tileIndex = i;
-     tile.innerHTML = sound1TileSet[i].character;
+     tile.innerHTML = soundTileSet[i].character;
 
-     sound1TileSet[i].htmlElem = tile;
+     soundTileSet[i].htmlElem = tile;
      
      sound1TT.appendChild(tile);
 }
